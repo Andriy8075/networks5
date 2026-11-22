@@ -1,0 +1,47 @@
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Microsoft Office lock / temp files
+~$*
+*.tmp
+
+# Traffic dump (must not be published)
+*.pcap
+*.pcapng
+
+# Suricata: downloaded ET Open ruleset and full offline run logs
+# (keep evidence/rules/local.rules, suricata.yaml, eve-*-fragment.json, fast-*.log)
+evidence/suricata/rules/
+evidence/suricata/out-default/
+evidence/suricata/out-external-any/
+evidence/suricata/out-custom/
+evidence/suricata/etc/
+
+# Large intermediate tshark dumps (sessions/ keep the report transcripts)
+evidence/console/syn-all-web.txt
+evidence/console/http-all.txt
+evidence/console/io-stat-http-flood.txt
+evidence/console/scan-syn.txt
+
+# Generated fake terminal PNGs (report uses real WSL session text instead)
+evidence/shots/term-*.png

@@ -1,0 +1,8 @@
+Suricata image: jasonish/suricata:7.0.8
+Digest: sha256:89b300fb5d00f182359a1305543e828a804ede7f1685e75b05f607f7372428c6
+Suricata version: 7.0.8
+ET Open: emerging.rules.tar.gz for suricata-7.0.8
+suricata-update date (UTC): 2026-11-21
+Rules loaded: 69545 (enabled: 53572)
+HOME_NET: [10.42.48.0/24]
+EXTERNAL_NET: !$HOME_NET

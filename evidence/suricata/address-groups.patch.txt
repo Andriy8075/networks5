@@ -1,0 +1,7 @@
+﻿# Змінені параметри address-groups у suricata.yaml (фрагмент)
+vars:
+  address-groups:
+    HOME_NET: "[10.42.48.0/24]"
+    EXTERNAL_NET: "!$HOME_NET"
+# Другий прогін:
+# --set vars.address-groups.EXTERNAL_NET=any

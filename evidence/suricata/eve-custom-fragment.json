@@ -1,0 +1,170 @@
+[
+  {
+    "timestamp": "2026-11-03T09:01:44.791275+0000",
+    "src_ip": "10.42.48.126",
+    "dest_ip": "10.42.48.42",
+    "dest_port": 0,
+    "signature": "LAB5 ICMP Host Sweep",
+    "signature_id": 1000003
+  },
+  {
+    "timestamp": "2026-11-03T09:02:18.649068+0000",
+    "src_ip": "10.42.48.126",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 213,
+    "signature": "LAB5 SYN Port Scan",
+    "signature_id": 1000001
+  },
+  {
+    "timestamp": "2026-11-03T09:06:23.691387+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:24.794091+0000",
+    "src_ip": "54.85.25.140",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:26.826663+0000",
+    "src_ip": "13.65.227.72",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:28.776983+0000",
+    "src_ip": "13.65.227.72",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:30.810847+0000",
+    "src_ip": "54.85.25.140",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:32.885418+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:34.848620+0000",
+    "src_ip": "102.254.200.172",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:36.805222+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:38.865599+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:40.832097+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:42.834856+0000",
+    "src_ip": "102.254.200.172",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:44.858967+0000",
+    "src_ip": "36.115.221.91",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:46.755156+0000",
+    "src_ip": "13.65.227.72",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:48.821150+0000",
+    "src_ip": "36.115.221.91",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:50.822150+0000",
+    "src_ip": "168.96.108.184",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:52.920546+0000",
+    "src_ip": "36.115.221.91",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:54.872427+0000",
+    "src_ip": "36.115.221.91",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:56.849055+0000",
+    "src_ip": "190.187.3.200",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  },
+  {
+    "timestamp": "2026-11-03T09:06:58.862725+0000",
+    "src_ip": "168.96.108.184",
+    "dest_ip": "10.42.48.18",
+    "dest_port": 80,
+    "signature": "LAB5 HTTP Flood GET numeric query",
+    "signature_id": 1000002
+  }
+]
