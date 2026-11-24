@@ -10,10 +10,10 @@ i: suricata: Signal Received.  Stopping engine.
 i: pcap: read 1 file, 64343 packets, 5739266 bytes
 
 andrii@DESKTOP-7BD93CN:/mnt/c/Users/Admin/projects/NetworkLabs/lab5$ python3 evidence/scripts/summarize_eve.py evidence/suricata/out-custom/eve.json
-alerts: 42
-38	LAB5 HTTP Flood GET numeric query	src=['102.254.200.172', '13.65.227.72', '168.96.108.184', '190.187.3.200', '36.115.221.91', '54.85.25.140']	dst=['10.42.48.18']	2026-11-03T09:06:23.691387+0000 -> 2026-11-03T09:06:58.862725+0000
-2	LAB5 ICMP Host Sweep	src=['10.42.48.126']	dst=['10.42.48.42']	2026-11-03T09:01:44.791275+0000 -> 2026-11-03T09:01:44.791275+0000
-2	LAB5 SYN Port Scan	src=['10.42.48.126']	dst=['10.42.48.18']	2026-11-03T09:02:18.649068+0000 -> 2026-11-03T09:02:18.649068+0000
+alerts: 21
+19	LAB5 HTTP Flood GET random query	src=['102.254.200.172', '13.65.227.72', '168.96.108.184', '190.187.3.200', '36.115.221.91', '54.85.25.140']	dst=['10.42.48.18']	2026-11-03T09:06:23.691387+0000 -> 2026-11-03T09:06:58.862725+0000
+1	LAB5 ICMP Host Sweep	src=['10.42.48.126']	dst=['10.42.48.42']	2026-11-03T09:01:44.791275+0000 -> 2026-11-03T09:01:44.791275+0000
+1	LAB5 SYN Port Scan	src=['10.42.48.126']	dst=['10.42.48.18']	2026-11-03T09:02:18.649068+0000 -> 2026-11-03T09:02:18.649068+0000
 
 andrii@DESKTOP-7BD93CN:/mnt/c/Users/Admin/projects/NetworkLabs/lab5$ cat evidence/rules/local.rules
 # Lab5 custom rules for lr5_v02.pcap
@@ -25,11 +25,11 @@ andrii@DESKTOP-7BD93CN:/mnt/c/Users/Admin/projects/NetworkLabs/lab5$ cat evidenc
 # window:1024 matches the scanner fingerprint and avoids HTTP-flood SYNs (window 64240)
 alert tcp any any -> $HOME_NET any (msg:"LAB5 SYN Port Scan"; flags:S,12; window:1024; threshold:type both, track by_src, count 50, seconds 5; classtype:attempted-recon; sid:1000001; rev:2;)
 
-# 2) HTTP flood: burst of GET /?<digits> toward web server
+# 2) HTTP flood: burst of GET /?<random alphanumerics> toward web server
+# [A-Za-z0-9]+ covers both digit-only probes (this pcap) and letter/mixed junk queries
 # threshold 80/2s >> baseline (~1-2 req/s from all legit clients combined)
-alert http any any -> $HOME_NET 80 (msg:"LAB5 HTTP Flood GET numeric query"; flow:to_server,established; http.method; content:"GET"; http.uri; content:"/?"; pcre:"/\/\?\d+/"; threshold:type both, track by_dst, count 80, seconds 2; classtype:denial-of-service; sid:1000002; rev:1;)
+alert http any any -> $HOME_NET 80 (msg:"LAB5 HTTP Flood GET random query"; flow:to_server,established; http.method; content:"GET"; http.uri; content:"/?"; pcre:"/\/\?[A-Za-z0-9]+/"; threshold:type both, track by_dst, count 80, seconds 2; classtype:denial-of-service; sid:1000002; rev:2;)
 
 # 3) ICMP host discovery: rapid echo requests from one source
 # baseline: almost no ICMP from clients; recon sends 10 echoes in <1s
 alert icmp any any -> $HOME_NET any (msg:"LAB5 ICMP Host Sweep"; itype:8; threshold:type both, track by_src, count 5, seconds 2; classtype:attempted-recon; sid:1000003; rev:1;)
-
