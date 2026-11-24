@@ -1,5 +1,0 @@
-OS: Windows 10 (build 26300) + WSL Ubuntu 24.04
-Wireshark/tshark: TShark (Wireshark) 4.6.10 (v4.6.10-0-geac916f07299).
-Variant: 02
-PCAP: lr5_v02.pcap
-SHA-256: 7144312da9c0760b7ab64cd07f60e3baff5b6b7aa6508fb51327965507a52e46

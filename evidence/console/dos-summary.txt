@@ -1,9 +1,0 @@
-HTTP flood requests=6160
-unique_sources=8
-start=2026-11-03 09:06:22.123482
-end=2026-11-03 09:06:59.402552
-duration_s=37.279
-peak_rps=189
-avg_rps=165.24
-SYN=6160 SYN-ACK=6160
-spoofed=False (full handshake)

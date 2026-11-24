@@ -12,12 +12,10 @@
 
 ### Команди та скрипти
 
-- `evidence/commands.txt` — команди tshark / Suricata / Python
 - `evidence/scripts/count_syn_by_src.py` — підрахунок SYN без ACK за джерелом
 - `evidence/scripts/summarize_eve.py` — зведення alerts з eve.json
 - `evidence/scripts/investigate.py` — розширення (а): автоматичне розслідування → JSON
 - `evidence/scripts/incident.json` — результат investigate.py
-- `evidence/scripts/build_report.py` — збірка звіту .docx
 
 ### Правила та Suricata
 
@@ -25,11 +23,3 @@
 - `evidence/suricata/suricata.yaml` — конфіг з `HOME_NET: [10.42.48.0/24]`
 - `evidence/suricata/eve-fragment.json` — фрагмент alerts ET Open
 - `evidence/suricata/eve-custom-fragment.json` — alerts власних правил
-- `evidence/suricata/fast-default.log` / `fast-custom.log`
-- Повний ET Open (`evidence/suricata/rules/`) і сирі `out-*`/`eve.json` у git не зберігаються — відтворюються локально через `suricata-update` і офлайн-прогін (див. `evidence/commands.txt`)
-
-### Консольні виводи та знімки
-
-- `evidence/console/sessions/` — повні сесії WSL у форматі `user@host:path$ команда` + вивід (як у ЛР4)
-- `evidence/console/` — додаткові збережені виводи команд
-- `evidence/shots/` — знімки GUI Wireshark (і схема мережі)
