@@ -1,4 +1,4 @@
-﻿andrii@DESKTOP-7BD93CN:/mnt/c/Users/Admin/projects/NetworkLabs/lab5$ python3 evidence/scripts/investigate.py lr5_v02.pcap evidence/scripts/incident.json
+andrii@DESKTOP-7BD93CN:/mnt/c/Users/Admin/projects/NetworkLabs/lab5$ python3 evidence/scripts/investigate.py lr5_v02.pcap evidence/scripts/incident.json
 {
   "pcap": "lr5_v02.pcap",
   "recon": {
@@ -25,10 +25,11 @@
     "target": "10.42.48.18",
     "ports_probed": 1029,
     "syn_packets": 1029,
+    "scanner_rst_packets": 3,
     "window_size_mode": "1024",
     "start_utc": "2026-11-03T09:02:18.581514000Z",
     "end_utc": "2026-11-03T09:02:20.063111000Z",
-    "evidence": "SYN with small window; RST after SYN-ACK on open ports"
+    "evidence": "SYN with small window; scanner RST after SYN-ACK on open ports"
   },
   "dos": {
     "type": "HTTP flood",
@@ -54,4 +55,3 @@
     "evidence": "Completed TCP handshake + GET /?<random> Host: shop.lab.local"
   }
 }
-

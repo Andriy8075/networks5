@@ -24,10 +24,11 @@
     "target": "10.42.48.18",
     "ports_probed": 1029,
     "syn_packets": 1029,
+    "scanner_rst_packets": 3,
     "window_size_mode": "1024",
     "start_utc": "2026-11-03T09:02:18.581514000Z",
     "end_utc": "2026-11-03T09:02:20.063111000Z",
-    "evidence": "SYN with small window; RST after SYN-ACK on open ports"
+    "evidence": "SYN with small window; scanner RST after SYN-ACK on open ports"
   },
   "dos": {
     "type": "HTTP flood",

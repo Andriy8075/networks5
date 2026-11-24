@@ -72,22 +72,30 @@ def main():
             best = len(ports)
             times = sorted(t for t, _, _ in items)
             windows = Counter(w for _, _, w in items)
-            # classify SYN vs connect: check if RST follows open ports
-            open_flow = tshark_fields(
+            # SYN-scan fingerprint: scanner itself sends RST (often window 0) after SYN-ACK
+            scanner_rst_rows = tshark_fields(
                 pcap,
                 f"ip.src=={src} && ip.dst=={dst} && tcp.flags.reset==1 && tcp.window_size==0",
                 ["tcp.dstport"],
             )
+            scanner_rst_count = len(scanner_rst_rows)
+            scan_type = "SYN scan" if scanner_rst_count > 0 else "port scan (SYN probes)"
+            evidence = (
+                "SYN with small window; scanner RST after SYN-ACK on open ports"
+                if scanner_rst_count > 0
+                else "Many SYN/no-ACK to distinct ports; no scanner RST with window 0 observed"
+            )
             scan = {
-                "type": "SYN scan",
+                "type": scan_type,
                 "source": src,
                 "target": dst,
                 "ports_probed": len(ports),
                 "syn_packets": len(items),
+                "scanner_rst_packets": scanner_rst_count,
                 "window_size_mode": windows.most_common(1)[0][0] if windows else None,
                 "start_utc": times[0],
                 "end_utc": times[-1],
-                "evidence": "SYN with small window; RST after SYN-ACK on open ports",
+                "evidence": evidence,
             }
 
     # DoS: external HTTP GET flood toward web server
